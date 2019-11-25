@@ -335,7 +335,7 @@ public class FastQrReaderViewPlugin implements MethodCallHandler, PluginRegistry
     }
 
 
-    void startScanning(@NonNull Result result) {
+    private void startScanning(@NonNull Result result) {
         camera.scanning = true;
         camera.barcodeScanningProcessor.shouldThrottle.set(false);
         result.success(null);
@@ -401,7 +401,7 @@ public class FastQrReaderViewPlugin implements MethodCallHandler, PluginRegistry
 //        }
     }
 
-    void stopScanning(@NonNull Result result) {
+    private void stopScanning(@NonNull Result result) {
         stopScanning();
         result.success(null);
     }
@@ -413,7 +413,7 @@ public class FastQrReaderViewPlugin implements MethodCallHandler, PluginRegistry
 //        camera.imageReader.close();
     }
 
-    void toggleFlash(@NonNull Result result) {
+    private void toggleFlash(@NonNull Result result) {
         toggleFlash();
         result.success(null);
     }
